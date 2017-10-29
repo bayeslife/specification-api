@@ -1,0 +1,40 @@
+mutation achange {
+  res: createResource(id: "RESA", name: "RESA") {
+    id
+  }
+  rfs: createResourcefacingservicespecification(id: "RFSA", name: "RFSNAME") {
+    id
+  }
+  cfs: createCustomerfacingservicespecification(id: "CFSA", name: "CFSNAME") {
+    id
+  }
+  cr: createCFSRFS(source: "CFSA", target: "RFSA") {
+    source
+    target
+  }
+  rr: createRFSRes(source: "RFSA", target: "RESA") {
+    source
+    target
+  }
+}
+
+query aquery {
+  resource: resource(id: "RESA") {
+    id
+    name
+  }
+  rfs: resourcefacingservicespecification(id: "RFSA") {
+    id
+    name
+  }
+  cfs: customerfacingservicespecification(id: "CFSA") {
+    id
+    name
+  }
+  highestCFS: resource(id: "RESA") {
+    id
+    mostSignificantCFS {
+      id
+    }
+  }
+}
