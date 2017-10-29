@@ -1,5 +1,5 @@
 {
-  "name": "Specification API",
+  "name": "SpecificationAPI",
   "version": "0.0.1",
   "description": "An GraphQL API for querying solution specifications",
   "main": "index.js",
